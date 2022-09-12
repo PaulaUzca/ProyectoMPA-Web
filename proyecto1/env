@@ -1,0 +1,5 @@
+SECRET_KEY = 'django-insecure-1%eqrkl=se^^r4r=q=()@9-!#7e1j^%s-yet%8m+gk#*=gmg*4'
+DB_NAME = 'kzxemejm'
+DB_USERNAME = 'kzxemejm'
+DB_PASSWORD = '8KZ4CyBLa0s1V-LmG3xIlXMLXni5buvh'
+DB_HOST = 'kesavan.db.elephantsql.com'

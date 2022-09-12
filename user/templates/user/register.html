@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <h2>Register</h2>
-
+    <br>
+    <div id="colorlib-page" style="margin:0px auto;">
+        <h1 id="colorlib-logo" class="mb-4 mb-md-5" style="font-family:'Franklin Gothic Medium'; text-align: center;"><a style="background-image: url(https://image.shutterstock.com/image-photo/night-road-260nw-671548567.jpg);">Register</a></h1>
+    </div>
     <section class="form__container">
 
     {% if message %}
@@ -13,27 +14,27 @@
     <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         <div class="form-group" id="firstfield">
-            <input class="field form__field--short" autofocus type="text" name="username" placeholder="Username">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <input class="field form__field--long" type="email" name="email" placeholder="Email Address">
+            <input class="form-control" type="email" name="email" placeholder="Email Address">
         </div>
         <div class="form-group">
 
-            <select name="gremio">
+            <select name="gremio" class="form-control">
                 {% for gremio in gremios %}
-                <option value="{{gremio.id}}">{{gremio}}</option>
+                <option value="{{gremio.id}}" style=" color:black;">{{gremio}}</option>
                 {% endfor %}
             </select>
         </div>
 
         <div class="form-group">
-            <input class="field form__field--short" type="password" name="password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <input class="field form__field--short" type="password" name="confirmation" placeholder="Confirm Password">
+            <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
         </div>
-        <input class="button button__primary" type="submit" value="Register">
+        <input type="submit" value="Register" class="btn btn-primary">
     </form>
 
     <p class="simple__message">

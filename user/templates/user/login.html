@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <h2>Login</h2>
-
+<br>
+<div id="colorlib-page">
+    <h1 id="colorlib-logo" class="mb-4 mb-md-5" style="font-family:'Franklin Gothic Medium'; text-align: center;"><a style="background-image: url(https://image.shutterstock.com/image-photo/night-road-260nw-671548567.jpg);">Login</a></h1>
+</div>
 <section class="form__container">
     {% if message %}
     <p class="simple__message error__message">{{ message }}</p>
@@ -11,12 +12,12 @@
     <form action="{% url 'login' %}" method="post" >
         {% csrf_token %}
         <div class="form-group" id="firstfield">
-            <input autofocus class="field form__field--short" type="text" name="username" placeholder="Username">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <input class="field form__field--short" type="password" name="password" placeholder="Password">
+            <input class="form-control" type="password" name="password" placeholder="Password">
         </div>
-        <input class="button button__primary" type="submit" value="Login">
+        <input type="submit" value="Login" class="btn btn-primary">
     </form>
 
     <p class="simple__message"><br> Don't have an account?
