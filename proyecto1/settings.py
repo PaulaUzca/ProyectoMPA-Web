@@ -70,10 +70,10 @@ WSGI_APPLICATION = 'proyecto1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kzxemejm',
-        'USER': 'kzxemejm',
-        'PASSWORD': '8KZ4CyBLa0s1V-LmG3xIlXMLXni5buvh',
-        'HOST': 'kesavan.db.elephantsql.com',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USERNAME"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
         'PORT': 5432,
     }
 }

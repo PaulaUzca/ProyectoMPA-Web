@@ -1,0 +1,10 @@
+.form__container{
+    margin: 0 auto;
+    width: 70%;
+}
+.container__main{
+    margin-top:50px;
+}
+input{
+    font-family: 'Playfair Display', serif;
+}

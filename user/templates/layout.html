@@ -9,14 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Pagina principal{% endblock %}</title> <!--DONE-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="{% static 'css/mainstyles.css' %}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
         <meta name="msapplication-TileColor" content="#ffffff"> 
         <meta name="theme-color" content="#ffffff">
-		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{% static 'css/animate.css'%}">
 		<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
 		<link rel="stylesheet" href="{% static 'css/style.css'%}">
 		<link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'%}">
+        <link href="{% static 'mainstyle.css' %}" rel="stylesheet">
         {% block styles%}
         {% endblock %} <!--DONE-->
     </head>
@@ -34,7 +35,7 @@
 			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 			<aside id="colorlib-aside" role="complementary" class="js-fullheight">
 	
-				<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a style="background-image: url(\\static/images/bg_1.jpg);">Witchcraft and more</a></h1>
+				<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="{%url 'index'%}" style="background-image: url(https://i.imgur.com/xMcbvyl.jpeg);">Witchcraft and more</a></h1>
 				<nav id="colorlib-main-menu" role="navigation">
 					<ul>
 						{% if user.is_authenticated %}
