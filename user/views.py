@@ -34,6 +34,7 @@ def logout_view(request):
 
 ## Register view
 def register(request):
+    gremios = Gremio.objects.all()
     if request.method == "POST":
         username = request.POST["username"]
         email = request.POST["email"]
@@ -43,7 +44,8 @@ def register(request):
         confirmation = request.POST["confirmation"]
         if password != confirmation:
             return render(request, "user/register.html", {
-                "message": "Passwords must match."
+                "message": "Passwords must match.",
+                "gremios" : gremios
             })
 
         # Attempt to create new user
@@ -53,12 +55,12 @@ def register(request):
             user.save()
         except IntegrityError:
             return render(request, "user/register.html", {
-                "message": "Username already taken."
+                "message": "Username already taken.",
+                "gremios" : gremios
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
-        gremios = Gremio.objects.all()
         return render(request, "user/register.html", {
             "gremios" : gremios
         })
